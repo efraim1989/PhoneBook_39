@@ -15,6 +15,16 @@ public class HelperBase {
         this.wd = wd;
     }
 
+
+    public void pause(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void click(By locator){
         wd.findElement(locator).click();
     }
@@ -41,14 +51,6 @@ public class HelperBase {
         return true;
     }
 
-    public void pause(int millis){
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-    }
 
 
 

@@ -1,7 +1,7 @@
 package tests;
 
+import models.User;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,6 +14,26 @@ public class LoginTests extends TestBase{
 //        wd = new ChromeDriver();
 //        wd.navigate().to("https://telranedu.web.app/home");
 //        wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+//
+//    }
+
+//    @Test
+//    public void loginPositiveTestModel(){
+//
+//        //open login form
+//        app.getHelperUser().openLoginRegistrationForm();
+//
+//        //fill login form
+//
+//
+//        app.getHelperUser().fillLoginRegistrationForm("edpunk@bk.com", "Nikonddddddddd12345!!!!!");
+//
+//        //click on button login
+//        app.getHelperUser().submitLogin();
+//
+//        //assert
+//        app.getHelperUser().pause(3000);
+//        Assert.assertTrue(app.getHelperUser().isElementPresent(By.tagName("button")));
 //
 //    }
 

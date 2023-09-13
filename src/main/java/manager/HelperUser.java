@@ -1,5 +1,6 @@
 package manager;
 
+import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -8,6 +9,7 @@ public class HelperUser extends HelperBase{
     public HelperUser(WebDriver wd){
         super(wd);
     }
+
 
 
 
@@ -52,10 +54,23 @@ public class HelperUser extends HelperBase{
     public void fillRegistrationForm(String email, String password) {
         int i = (int)(System.currentTimeMillis()/1000)%3600;
 
-        String newEmail = email.substring(0, email.indexOf("@")) + i + email.substring(email.indexOf("@"));
+        String newEmail =
+                email.substring(0, email.indexOf("@")) + i
+                                        + email.substring(email.indexOf("@"));
 
         type(By.xpath("//input[1]"), newEmail);
         type(By.xpath("//input[2]"), password);
+    }
+
+    public void fillRegistrationForm(User user) {
+        
+//
+//        String newEmail =
+//                email.substring(0, email.indexOf("@")) + i
+//                        + email.substring(email.indexOf("@"));
+
+        type(By.xpath("//input[1]"), user.getEmail());
+        type(By.xpath("//input[2]"), user.getPassword());
     }
 
     public void openLoginRegistrationForm(){
