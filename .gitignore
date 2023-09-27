@@ -45,3 +45,4 @@ bin/
 Logs/log-20230927T141931.txt
 Logs/log-20230927T141851.txt
 *.txt
+myApp.log
