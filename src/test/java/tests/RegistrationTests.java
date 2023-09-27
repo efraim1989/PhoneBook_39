@@ -17,15 +17,20 @@ public class RegistrationTests extends TestBase{
     }
 
 
+
+
     @Test
     public void registrationPositiveTest(){
+
+        String email = "edpunk@bk.com";
+        String password = "Nikonddddddddd12345!!!!!";
 
 
         //open login form
         app.getHelperUser().openLoginRegistrationForm();
 
         //fill login form
-        app.getHelperUser().fillRegistrationForm("edpunk@bk.com","Nikonddddddddd12345!!!!!");
+        app.getHelperUser().fillRegistrationForm(email, password);
 
 
         //click on button registration
@@ -33,6 +38,7 @@ public class RegistrationTests extends TestBase{
 
         //assert
         app.getHelperUser().pause(3000);
+        logger.info("registrationPositiveTest starts with:" + email + " & " + password);
         Assert.assertTrue(app.getHelperUser().isElementPresent(By.tagName("button")));
 
     }
@@ -41,7 +47,11 @@ public class RegistrationTests extends TestBase{
 
         int i = (int)(System.currentTimeMillis()/1000)%3600;
 
-        User user = User.builder().email("edpunk_" + i + "@bk.com").password("Nikonddddddddd12345!!!!!").build();
+
+
+        User user = User.builder()
+                .email("edpunk_" + i + "@bk.com")
+                .password("Nikonddddddddd12345!!!!!").build();
 
         //open login form
         app.getHelperUser().openLoginRegistrationForm();

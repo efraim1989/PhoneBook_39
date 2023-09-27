@@ -1,0 +1,1 @@
+2023-09-27 14:19:40,532 INFO t.TestBase [RegistrationTests.java:41] registrationPositiveTest starts with:edpunk@bk.com & Nikonddddddddd12345!!!!!
