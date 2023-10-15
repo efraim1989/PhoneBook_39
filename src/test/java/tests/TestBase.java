@@ -26,6 +26,7 @@ public class TestBase {
     @AfterMethod
     public void stopTest(Method method){
         logger.info("Finish test ---> " + method.getName());
+        logger.info("===============================================");
     }
 
     @BeforeSuite

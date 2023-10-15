@@ -1,9 +1,13 @@
 package tests;
 
+import manager.NGListener;
 import models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+@Listeners(NGListener.class)
 
 public class LoginTests extends TestBase{
 

@@ -1,6 +1,6 @@
 <configuration>
 
-    <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
+    <timestamp key="bySecond" datePattern="ddMMyyyy'T'HHmmss"/>
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
 <!--        <file>myApp.log</file>-->
