@@ -4,6 +4,7 @@ import manager.NGListener;
 import models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -40,6 +41,11 @@ public class LoginTests extends TestBase{
 //        Assert.assertTrue(app.getHelperUser().isElementPresent(By.tagName("button")));
 //
 //    }
+
+    @BeforeMethod
+    public void precondition(){
+        if (app.getHelperUser().isLogged()) app.getHelperUser().logout();
+    }
 
 
     @Test
@@ -93,6 +99,10 @@ public class LoginTests extends TestBase{
         //assert
         app.getHelperUser().pause(3000);
         Assert.assertTrue(app.getHelperUser().isElementPresent(By.tagName("button")));
+
+        app.getHelperUser().logout();
+
+
 
     }
 
