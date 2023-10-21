@@ -21,18 +21,18 @@ public class TestBase {
 
     Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void startTest(Method method){
         logger.info("Starting test ---> " + method.getName());
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void stopTest(Method method){
         logger.info("Finish test ---> " + method.getName());
         logger.info("===============================================");
     }
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
 //    @BeforeMethod
 //    public void init() {
 //        wd = new ChromeDriver();
@@ -43,7 +43,7 @@ public class TestBase {
         app.init();
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
 //    @AfterMethod
 //    public void tearDown(){
 //        pause(3000);

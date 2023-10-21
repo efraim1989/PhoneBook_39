@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class RegistrationTests extends TestBase{
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition(){
         if (app.getHelperUser().isLogged()) {
             app.getHelperUser().logout();
@@ -19,7 +19,7 @@ public class RegistrationTests extends TestBase{
 
 
 
-    @Test
+    @Test(groups = {"positive"})
     public void registrationPositiveTest(){
 
         String email = "edpunk@bk.com";
@@ -42,7 +42,7 @@ public class RegistrationTests extends TestBase{
         Assert.assertTrue(app.getHelperUser().isElementPresent(By.tagName("button")));
 
     }
-    @Test
+    @Test(groups = {"positive"})
     public void registrationPositiveTestModel(){
 
         int i = (int)(System.currentTimeMillis()/1000)%3600;
@@ -70,7 +70,7 @@ public class RegistrationTests extends TestBase{
     }
 
 
-    @Test
+    @Test(groups = {"negative"})
     public void registrationNegativeTestWrongLogin_Space(){
         //open login form
         app.getHelperUser().openLoginRegistrationForm();

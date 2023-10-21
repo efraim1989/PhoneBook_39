@@ -4,6 +4,8 @@
     <test name="smoke" >
         <classes>
             <class name="tests.LoginTests" />
+            <class name="tests.AddNewContactTests" />
+
         </classes>
     </test>
 
