@@ -102,7 +102,24 @@ public class LoginTests extends TestBase{
         Assert.assertTrue(app.getHelperUser().isElementPresent(By.tagName("button")));
 
         app.getHelperUser().logout();
+    }
+    @Test(groups = {"positive"})
+    public void loginPositiveTestProps(){
 
+        //open login form
+        app.getHelperUser().openLoginRegistrationForm();
+
+        //fill login form from properties
+        app.getHelperUser().fillLoginRegistrationForm(app.getEmail(), app.getPassword());
+
+        //click on button login
+        app.getHelperUser().submitLogin();
+
+        //assert
+        app.getHelperUser().pause(3000);
+        Assert.assertTrue(app.getHelperUser().isElementPresent(By.tagName("button")));
+
+        app.getHelperUser().logout();
     }
 
     @Test(groups = {"positive"}, dataProvider = "userDTO", dataProviderClass = ProviderData.class)

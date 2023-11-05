@@ -1,5 +1,6 @@
 package tests;
 
+import manager.ProviderData;
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -42,6 +43,39 @@ public class RegistrationTests extends TestBase{
         Assert.assertTrue(app.getHelperUser().isElementPresent(By.tagName("button")));
 
     }
+    @Test(groups = {"positive"}, dataProvider = "registrationCSV", dataProviderClass = ProviderData.class)
+    public void registrationPositiveTestCSV(User user){
+
+        String email = user.getEmail();
+        String password = user.getPassword();
+
+
+        //open login form
+        app.getHelperUser().openLoginRegistrationForm();
+
+        //fill login form
+        app.getHelperUser().fillRegistrationForm(email, password);
+
+
+        //click on button registration
+        app.getHelperUser().submitRegistration();
+
+        //assert
+        app.getHelperUser().pause(3000);
+        logger.info("registrationPositiveTest starts with:" + email + " & " + password);
+        Assert.assertTrue(app.getHelperUser().isElementPresent(By.tagName("button")));
+
+    }
+
+
+
+
+
+
+
+
+
+
     @Test(groups = {"positive"})
     public void registrationPositiveTestModel(){
 
